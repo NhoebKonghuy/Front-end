@@ -1,0 +1,17 @@
+.list-group-item {
+    transition: background-color 0.3s ease-in-out;
+}
+.list-group-item:hover {
+    background-color: #f8f9fa; /* Light gray */
+}
+.action-buttons button {
+    margin-left: 5px;
+}
+
+.list-group{
+    padding: 1px 0px 1px 0px;
+}
+.manage-report-header{
+
+    margin: 40px 0px 40px 0px;
+}

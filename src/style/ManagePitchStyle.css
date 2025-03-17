@@ -1,0 +1,70 @@
+/* Header */
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* List Group - Options */
+.list-group-item {
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #007bff;
+}
+
+/* Active Tab */
+.list-group-item.bg-primary {
+  background-color: #0056b3 !important;
+  color: white !important;
+}
+
+/* Content Card Styling */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Layout for Content and Tabs */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* Card Body Content Padding */
+.card-body {
+  padding: 25px;
+}
+
+/* Button Styles */
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  .col-md-8 {
+    margin-top: 20px;
+  }
+}

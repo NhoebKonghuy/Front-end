@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { GrUserManager } from "react-icons/gr";
 import { GiSoccerField } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
-import '../../style/style.css';
+import '../../style/Style.css';
 import { IoSettings } from "react-icons/io5";
 const AdminPage = () => {
   const adminOptions = [

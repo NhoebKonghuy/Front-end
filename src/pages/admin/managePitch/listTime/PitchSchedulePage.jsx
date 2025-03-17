@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ListTime from "./ListTime"; // Import ListTime component
-import '../../../../style/style.css';
+import '../../../../style/Style.css';
 const PitchSchedulePage = () => {
   // Mock data for pitches
   const [pitches, setPitches] = useState([

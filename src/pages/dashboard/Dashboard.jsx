@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaUsers, FaFutbol, FaCalendarCheck } from "react-icons/fa";
-import "../../style/style.css";
+import "../../style/Style.css";
 import { useDashboard } from "../../hooks/HookData";
 const Dashboard = () => {
   // Simulated data

@@ -7,6 +7,7 @@ const ManageUserPage = () => {
   const { users, setUsers, loading, error } = useUsers();
   const [showTable, setShowTable] = useState("");
   const [currentUsrId, setCurrentUserId] = useState(null);
+  const [loadingAction, setLoading] = useState(false);
   const [newUser, setNewUsers] = useState({
     username: "",
     password: "",
@@ -14,9 +15,8 @@ const ManageUserPage = () => {
   });
 
   const handleCreateUser = async () => {
+    setLoading(true);
     try {
-      console.log("newUser: ", newUser);
-      toast.error("Failed to update report", error);
       const response = await ApiClient.post("/admin/create-user", {
         username: newUser.username,
         password: newUser.password,
@@ -26,7 +26,7 @@ const ManageUserPage = () => {
       setUsers((prevUsers) => [
         ...prevUsers,
         {
-          username: newUser.name,
+          username: newUser.username,
           password: newUser.password,
           role: newUser.role,
         },
@@ -35,19 +35,25 @@ const ManageUserPage = () => {
       setShowTable("");
     } catch (error) {
       console.error("Failed to add report", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleDeleteUser = async (id) => {
+    setLoading(true);
     try {
       await ApiClient.delete(`/admin/delete-user/${id}`);
       const filteredReports = users.filter((users) => users.id !== id);
       setUsers(filteredReports);
     } catch (error) {
       toast.error("Failed to delete user", error);
+    } finally {
+      setLoading(false);
     }
   };
   const handleUpdate = async () => {
+    setLoading(true);
     try {
       const response = await ApiClient.put(
         `/admin/update-user/${currentUsrId}`,
@@ -72,10 +78,12 @@ const ManageUserPage = () => {
       setNewUsers({ username: "", password: "", role: "" });
     } catch (error) {
       toast.error("Failed to update report", error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  if (loading) {
+  if (loading || loadingAction) {
     return (
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="spinner-border text-primary" role="status">

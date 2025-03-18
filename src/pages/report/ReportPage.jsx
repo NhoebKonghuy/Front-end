@@ -5,11 +5,18 @@ import ApiClient from "../../utils/ApiClient";
 import { useEffect, React } from "react";
 import { useReports } from "/src/hooks/HookData";
 
-
 const ReportPage = () => {
-  const {reports, loading, error} = useReports();
+  const { reports, loading, error } = useReports();
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
-  
   return (
     <div className="container mt-5">
       <h2 className="text-center fw-bold text-black mb-4">

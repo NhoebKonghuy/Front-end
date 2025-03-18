@@ -10,6 +10,7 @@ const ManageReport = () => {
   const { reports, setReports, loading, error } = useReports();
   const [ShowTable, setShowTable] = useState("");
   const [currentId, setCurrentId] = useState(null);
+  
   const [newReport, setNewReport] = useState([
     {
       name: "",
@@ -84,6 +85,7 @@ const ManageReport = () => {
       </div>
     );
   }
+
   return (
     <div className="col">
       <div

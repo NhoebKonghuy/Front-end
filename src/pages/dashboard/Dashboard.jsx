@@ -39,7 +39,16 @@ const Dashboard = () => {
       bgColor: "bg-light",
     },
   ];
-  console.log(dashboard);
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="container mt-5">
       <h2 className="text-center fw-bold text-dark mb-4 ">Admin Dashboard</h2>

@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" style={{ marginLeft: "20px" }}>
-          <img src={logo} alt="logo" width="50" height="50" />
+          <img src={logo} alt="logo" width="75" height="50" />
         </Link>
 
         <button

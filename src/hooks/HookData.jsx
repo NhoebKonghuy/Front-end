@@ -95,3 +95,37 @@ export const useDashboard = () => {
 
   return { dashboard, setDashboard, loading, error };
 };
+
+export const usePitches = () => {
+  const [pitches, setPitches] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchpitches = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await ApiClient.get("/admin/get-pitch-list");
+        if (response.status === 200 && response.data.results) {
+          setPitches(response.data.results);
+        } else {
+          setError("Failed to fetch reports");
+        }
+      } catch (err) {
+        setError(
+          err?.response?.data?.message || err.message || "An error occurred"
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchpitches();
+  }, []);
+
+  return { pitches, setPitches, loading, error };
+};
+
+
+

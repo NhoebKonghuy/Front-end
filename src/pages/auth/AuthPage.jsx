@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useUser } from "../../context/userContext/UserContext";
 import { toast } from "react-toastify";
 import ApiClient from "../../utils/ApiClient";
@@ -55,6 +55,9 @@ const AuthPage = () => {
       setLoading(false);
     }
   };
+
+ 
+
 
   if (loading) {
     return (

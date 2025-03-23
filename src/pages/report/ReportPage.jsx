@@ -7,6 +7,7 @@ import { useReports } from "/src/hooks/HookData";
 
 const ReportPage = () => {
   const { reports, loading, error } = useReports();
+
   if (loading) {
     return (
       <div className="d-flex justify-content-center align-items-center vh-100">

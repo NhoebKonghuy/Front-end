@@ -10,27 +10,29 @@ import AuthPage from "../pages/auth/AuthPage";
 import Booking from "../pages/booking/Booking";
 import ProtectedRoute from "./ProtectedRoute";
 import { UserProvider } from "../context/userContext/UserContext";
+import  PitchPage  from "../pages/pitch/PitchPage";
 
 const RouteComponent = ({ role }) => {
   return (
-      <Routes>
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute allowedRoles={["ADMIN_USER"]}>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="/admin/manage-users" element={<ManageUsersPage />} />
-        <Route path="/admin/manage-pitches" element={<ManagePitchPage />} />
-        <Route path="/admin/manage-report" element={<ManageReport />} />
-        <Route path="/report" element={<ReportPage />} />
-        <Route path="/profile" element={<AuthPage />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-        <Route path="/booking" element={<Booking />} />
-      </Routes>
+    <Routes>
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute allowedRoles={["ADMIN_USER"]}>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/admin" element={<AdminPage />} />
+      <Route path="/admin/manage-users" element={<ManageUsersPage />} />
+      <Route path="/admin/manage-pitches" element={<ManagePitchPage />} />
+      <Route path="/admin/manage-report" element={<ManageReport />} />
+      <Route path="/report" element={<ReportPage />} />
+      <Route path="/profile" element={<AuthPage />} />
+      <Route path="*" element={<h1>404 Not Found</h1>} />
+      <Route path="/booking" element={<Booking />} />
+      <Route path="/pitch" element={<PitchPage />} />
+    </Routes>
   );
 };
 
